@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/notesList">
+
+    <fragment
+        android:id="@+id/notesList"
+        android:name="com.example.roommvvm.Fragments.NotesList"
+        android:label="fragment_notes_list"
+        tools:layout="@layout/fragment_notes_list" >
+        <action
+            android:id="@+id/action_notesList_to_notesCreation"
+            app:destination="@id/notesCreation" />
+        <action
+            android:id="@+id/action_notesList_to_notesUpdation"
+            app:destination="@id/notesUpdation" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesCreation"
+        android:name="com.example.roommvvm.Fragments.NotesCreation"
+        android:label="fragment_notes_creation"
+        tools:layout="@layout/fragment_notes_creation" >
+        <action
+            android:id="@+id/action_notesCreation_to_notesList"
+            app:destination="@id/notesList" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesUpdation"
+        android:name="com.example.roommvvm.Fragments.notesUpdation"
+        android:label="fragment_notes_updation"
+        tools:layout="@layout/fragment_notes_updation" >
+        <action
+            android:id="@+id/action_notesUpdation_to_notesList"
+            app:destination="@id/notesList" />
+    </fragment>
+</navigation>
