@@ -18,6 +18,21 @@
         tools:itemCount="20"
         />
 
+    <TextView
+        android:id="@+id/tvEmptyNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please add a note"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="356dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddNotes"
         android:layout_width="wrap_content"
