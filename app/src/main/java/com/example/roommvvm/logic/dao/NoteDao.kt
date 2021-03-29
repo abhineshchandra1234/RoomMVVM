@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.roommvvm.data.models.Note
 
+@Dao
 interface NoteDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
