@@ -1,4 +1,4 @@
-package com.example.roommvvm.Fragments
+package com.example.roommvvm.ui.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

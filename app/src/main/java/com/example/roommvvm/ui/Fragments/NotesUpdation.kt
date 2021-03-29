@@ -1,4 +1,4 @@
-package com.example.roommvvm.Fragments
+package com.example.roommvvm.ui.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.roommvvm.R
 
 
-class NotesCreation : Fragment(R.layout.fragment_notes_creation) {
-
+class notesUpdation : Fragment(R.layout.fragment_notes_updation) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
