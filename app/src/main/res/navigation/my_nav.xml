@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/notesList"
-        android:name="com.example.roommvvm.ui.Fragments.NotesList"
+        android:name="com.example.roommvvm.ui.Fragments.NotesList.NotesList"
         android:label="Notes List"
         tools:layout="@layout/fragment_notes_list" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/notesCreation"
-        android:name="com.example.roommvvm.ui.Fragments.NotesCreation"
+        android:name="com.example.roommvvm.ui.Fragments.NotesCreation.NotesCreation"
         android:label="Notes Creation"
         tools:layout="@layout/fragment_notes_creation" >
         <action
