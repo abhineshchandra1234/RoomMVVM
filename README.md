@@ -17,7 +17,6 @@
 - ViewBinding
 
 ## Tasks to be done
-- add delete btn and function for single && all notes
 - add viewpager2
 
 ## Improvements to be done
