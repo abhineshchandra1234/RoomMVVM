@@ -47,5 +47,6 @@ class NotesListAdapter: RecyclerView.Adapter<NotesListAdapter.MyViewHolder>() {
 
     fun setData(note: List<Note>) {
         this.noteList = note
+        notifyDataSetChanged()
     }
 }

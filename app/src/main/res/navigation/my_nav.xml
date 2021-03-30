@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/notesUpdation"
-        android:name="com.example.roommvvm.ui.Fragments.notesUpdation"
+        android:name="com.example.roommvvm.ui.Fragments.NotesUpdation"
         android:label="Notes Updation"
         tools:layout="@layout/fragment_notes_updation" >
         <action

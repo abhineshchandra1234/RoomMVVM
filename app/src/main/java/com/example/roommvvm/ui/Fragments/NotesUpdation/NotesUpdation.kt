@@ -16,7 +16,7 @@ import com.example.roommvvm.databinding.FragmentNotesUpdationBinding
 import com.example.roommvvm.ui.viewModels.NoteViewModel
 
 
-class notesUpdation : Fragment(R.layout.fragment_notes_updation) {
+class NotesUpdation : Fragment(R.layout.fragment_notes_updation) {
     val TAG = "Main"
 
     private var title = ""
@@ -24,7 +24,7 @@ class notesUpdation : Fragment(R.layout.fragment_notes_updation) {
 
     private lateinit var binding: FragmentNotesUpdationBinding
     private lateinit var noteViewModel: NoteViewModel
-    private val args by navArgs<notesUpdationArgs>()
+    private val args by navArgs<NotesUpdationArgs>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentNotesUpdationBinding.bind(view)
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
