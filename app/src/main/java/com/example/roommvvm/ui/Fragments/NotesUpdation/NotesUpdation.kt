@@ -2,10 +2,8 @@ package com.example.roommvvm.ui.Fragments
 
 import android.os.Binder
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -35,6 +33,8 @@ class NotesUpdation : Fragment(R.layout.fragment_notes_updation) {
         binding.btnUpdateNotes.setOnClickListener {
             updateNote()
         }
+
+        setHasOptionsMenu(true)
     }
 
     private fun updateNote() {
@@ -51,5 +51,23 @@ class NotesUpdation : Fragment(R.layout.fragment_notes_updation) {
         } else {
             Toast.makeText(context, "Please fill all the fields!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.iconDelete -> deleteNote(args.selectedNote)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteNote(selectedNote: Note) {
+        noteViewModel.deleteNote(selectedNote)
+        Toast.makeText(context, "Note successfully deleted!", Toast.LENGTH_SHORT).show()
+
+        findNavController().navigate(R.id.action_notesUpdation_to_notesList)
     }
 }
