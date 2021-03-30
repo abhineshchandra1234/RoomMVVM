@@ -28,8 +28,8 @@ class NotesList : Fragment(R.layout.fragment_notes_list) {
 
         //Adapter
         adapter = NotesListAdapter()
-        rvNotes.adapter = adapter
-        rvNotes.layoutManager = LinearLayoutManager(context)
+        binding.rvNotes.adapter = adapter
+        binding.rvNotes.layoutManager = LinearLayoutManager(context)
 
         //ViewModel
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
