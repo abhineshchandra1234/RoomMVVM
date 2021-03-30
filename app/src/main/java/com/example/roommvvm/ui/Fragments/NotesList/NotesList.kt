@@ -26,10 +26,7 @@ class NotesList : Fragment(R.layout.fragment_notes_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             binding = FragmentNotesListBinding.bind(view)
 
-        //Adapter
-        adapter = NotesListAdapter()
-        binding.rvNotes.adapter = adapter
-        binding.rvNotes.layoutManager = LinearLayoutManager(context)
+
 
         //ViewModel
         noteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
@@ -40,13 +37,23 @@ class NotesList : Fragment(R.layout.fragment_notes_list) {
             noteList = it
 
             if (it.isEmpty()) {
-                binding.rvNotes.visibility = View.GONE
+                binding.rvNotes.visibility = View.INVISIBLE
                 binding.tvEmptyNote.visibility = View.VISIBLE
             } else {
                 binding.rvNotes.visibility = View.VISIBLE
-                binding.tvEmptyNote.visibility = View.GONE
+                binding.tvEmptyNote.visibility = View.INVISIBLE
             }
         })
+
+        //Adapter
+        adapter = NotesListAdapter()
+        binding.rvNotes.adapter = adapter
+        binding.rvNotes.layoutManager = LinearLayoutManager(context)
+
+        binding.swipeRefresh.setOnRefreshListener {
+            adapter.setData(noteList)
+            swipeRefresh.isRefreshing = false
+        }
 
 
 
