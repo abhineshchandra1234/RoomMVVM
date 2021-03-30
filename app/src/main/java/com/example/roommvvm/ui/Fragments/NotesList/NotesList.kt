@@ -1,10 +1,8 @@
 package com.example.roommvvm.ui.Fragments.NotesList
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -56,7 +54,7 @@ class NotesList : Fragment(R.layout.fragment_notes_list) {
         }
 
 
-
+        setHasOptionsMenu(true)
         fabOnClick()
     }
 
@@ -64,5 +62,18 @@ class NotesList : Fragment(R.layout.fragment_notes_list) {
         binding.fabAddNotes.setOnClickListener {
             findNavController().navigate(R.id.action_notesList_to_notesCreation)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_all_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.iconDeleteAll -> noteViewModel.deleteAllNotes()
+        }
+
+
+        return super.onOptionsItemSelected(item)
     }
 }
